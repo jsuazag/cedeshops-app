@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Theme } from "../../themes/theme";
 
 export const MenuWrapper = styled.section`
+    border-top: 2px solid #ccc;
     position: fixed;
     width: 100%;
     height: 80px;
@@ -9,7 +10,7 @@ export const MenuWrapper = styled.section`
     display: flex;
     bottom: 0;
     left: 0;
-    border: 1px solid red;
+    //border: 1px solid red;
 `;
 
 export const ItemMenuWrapper = styled.div`
