@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Theme } from "../../themes/theme";
+import { Theme, TOP_BAR_HEIGTH } from "../../themes/theme";
 
 export const TopbarWrapper = styled.div`
     width: 100%;
-    height: 60px;
+    height: ${TOP_BAR_HEIGTH}px;
     position: fixed;
     top: 0;
     left: 0;

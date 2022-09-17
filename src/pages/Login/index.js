@@ -1,3 +1,7 @@
+import { Page } from "../../components/Page";
+
 export const Login = () => (
-    <h1>Login Page</h1>
+    <Page>
+        <h1>Login Page</h1>
+    </Page>
 )

@@ -4,3 +4,5 @@ export const Theme = {
   alternative: "#3CCF4E",
   alternative_ligth: "#D4F6CC",
 };
+
+export const TOP_BAR_HEIGTH = 60;
