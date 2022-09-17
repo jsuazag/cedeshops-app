@@ -1,13 +1,14 @@
 import { GlobalStyle } from "./globalStyles";
-import { Home } from "./pages/Home";
+import { BrowserRouter } from 'react-router-dom';
 import { Topbar } from "./components/Topbar";
 import { Menu } from "./components/Menu";
+import { Navigation } from "./pages/Navigation";
 
 export const App = () => (
-  <>
+  <BrowserRouter>
     <GlobalStyle />
     <Topbar />
-    <Home />
+    <Navigation />
     <Menu />
-  </>
+  </BrowserRouter>
 )

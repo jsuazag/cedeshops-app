@@ -19,6 +19,7 @@ export const Search = ({ searchTerm = "" }) => {
         value={searchText}
         onChange={handlerChangeText}
         type="text"
+        placeholder="Buscar..."
       />
       <SearchClearWrapper
         onClick={clearSearchHandler}
