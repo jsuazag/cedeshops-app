@@ -5,7 +5,7 @@ import { MenuWrapper } from "./styles";
 const MenuOptions = [
   {
     icon: IoHome,
-    label: "Inicio",
+    label: "Tiendas",
     path: "/",
   },
   {

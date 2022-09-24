@@ -3,6 +3,7 @@ export const Theme = {
   secoundary: "#003865",
   alternative: "#3CCF4E",
   alternative_ligth: "#D4F6CC",
+  primary_text: '#222222',
 };
 
 export const TOP_BAR_HEIGTH = 60;

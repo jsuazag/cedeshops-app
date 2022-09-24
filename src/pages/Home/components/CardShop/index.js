@@ -1,7 +1,7 @@
 import { CardShopContent, CardShopImage, CardShopWrapper } from "./styles";
 
-export const CardShop = ({ image, name, location, category }) => (
-  <CardShopWrapper>
+export const CardShop = ({ id, image, name, location, category }) => (
+  <CardShopWrapper to={ `/products/${id}` }>
     <CardShopImage>
       <img src={image} alt={name} />
     </CardShopImage>
@@ -12,3 +12,5 @@ export const CardShop = ({ image, name, location, category }) => (
     </CardShopContent>
   </CardShopWrapper>
 );
+//1. <a> -> section -> contenido
+//2. <a> -> contenido
