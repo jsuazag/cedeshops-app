@@ -11,12 +11,12 @@ const MenuOptions = [
   {
     icon: IoCart,
     label: "Carrito",
-    path: "/",
+    path: "/checkout",
   },
   {
     icon: IoPerson,
     label: "Usuario",
-    path: "/",
+    path: "/profile",
   },
 ];
 

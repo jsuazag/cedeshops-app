@@ -1,16 +1,20 @@
 import styled from "styled-components";
-import { Theme } from "../../themes/theme";
+import { BOTTOM_MENU_HEIGTH, Theme } from "../../themes/theme";
 
 export const MenuWrapper = styled.section`
     border-top: 2px solid #ccc;
     position: fixed;
     width: 100%;
-    height: 80px;
+    height: ${BOTTOM_MENU_HEIGTH}px;
     background-color: #fff;
     display: flex;
     bottom: 0;
     left: 0;
     //border: 1px solid red;
+    a {
+        flex: 1;
+        text-decoration: none;
+    }
 `;
 
 export const ItemMenuWrapper = styled.div`
@@ -23,10 +27,12 @@ export const ItemMenuWrapper = styled.div`
     flex: 1;
     svg {
         color: ${Theme.secoundary};
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
     p {
         color: ${Theme.secoundary};
+        font-weight: 300;
+        font-size: 0.85em;
     }
     &:hover {
         cursor: pointer;

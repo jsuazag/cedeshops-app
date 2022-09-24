@@ -23,12 +23,25 @@ const SHOPS = [
     image: "https://www.ubico.me/assets/img_empresa/l/la-tienda-del-peluquero-poblado-accesorios-medellin-antioquia-7453.jpeg",
     location: "Tienda del Peluquero en Medellín",
     category: "Belleza"
+  },
+  {
+    id: 4,
+    name: "La tienda del peluquero",
+    image: "https://www.ubico.me/assets/img_empresa/l/la-tienda-del-peluquero-poblado-accesorios-medellin-antioquia-7453.jpeg",
+    location: "Tienda del Peluquero en Medellín",
+    category: "Belleza"
+  },
+  {
+    id: 5,
+    name: "La tienda del peluquero",
+    image: "https://www.ubico.me/assets/img_empresa/l/la-tienda-del-peluquero-poblado-accesorios-medellin-antioquia-7453.jpeg",
+    location: "Tienda del Peluquero en Medellín",
+    category: "Belleza"
   }
 ];
 
 export const Home = () => (
   <Page>
-    <h1>Home Page</h1>
     <Search />
     {
       SHOPS.map((item, key) => <CardShop key={key} {...item} />  )

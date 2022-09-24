@@ -6,3 +6,4 @@ export const Theme = {
 };
 
 export const TOP_BAR_HEIGTH = 60;
+export const BOTTOM_MENU_HEIGTH = 80;
