@@ -16,6 +16,13 @@ export const FormControl = styled.section`
   display: flex;
   flex-direction: column;
   margin: 6px 0;
+  span {
+    margin-bottom: 6px;
+    margin-top: 3px;
+    color: red;
+    font-weight: 700;
+    font-size: 0.88em;
+  }
 `;
 
 export const FormControLabel = styled.label`
@@ -57,5 +64,11 @@ export const Button = styled.button`
   opacity: 0.9;
   &:hover {
     opacity: 1;
+  }
+  &:disabled {
+    background-color: #ccc;
+    opacity: 0.7;
+    color: ${Theme.primary_text};
+    cursor: not-allowed;
   }
 `;
