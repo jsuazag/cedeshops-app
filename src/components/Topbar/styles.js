@@ -26,4 +26,7 @@ export const CartWrapper = styled.div`
 
 export const LogoWrapper = styled.div`
     padding: 5px;
+    img {
+        width: 200px;
+    }
 `;
