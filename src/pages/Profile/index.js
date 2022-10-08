@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import { Page } from "../../components/Page";
+import { useUser } from "../../contexts/UserContext";
 import { Button } from "../../globalStyles";
 import { Theme } from "../../themes/theme";
 
 export const Profile = () => {
-  const isAuth = false;
-  const user = {
-    name: "Jerson",
-    phone: "555555",
-    email: "jerson.suaza@cedesistemas.edu.co",
-    avatar: "",
-  };
+
+  const {user} = useUser();
 
   const UserInfo = () => (
     <div>
@@ -40,7 +36,7 @@ export const Profile = () => {
   return (
     <Page>
       <h1>Mi Cuenta</h1>
-      { isAuth ? <UserInfo /> : <UserUnauhtorized /> }
+      { user.isAuthenticated ? <UserInfo /> : <UserUnauhtorized /> }
     </Page>
   );
 };

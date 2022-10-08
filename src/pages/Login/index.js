@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { Page } from "../../components/Page";
+import { useUser } from "../../contexts/UserContext";
 import {
   Button,
   FormControl,
@@ -9,14 +11,30 @@ import {
 } from "../../globalStyles";
 
 export const Login = () => {
-  
-  const {register, handleSubmit, 
-      formState: {errors, isValid}
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid },
   } = useForm({ mode: "onChange" });
 
+  const { setAuthenticate, setUserInfo } = useUser();
+  const navigate = useNavigate();
+
   const onSubmitLogin = (data) => {
-    console.log('data', data);
-  }
+    console.log("data", data);
+    // TODO: call request login
+    if (data.email === "j@gmail.com" && data.password === "123456") {
+      setAuthenticate(true);
+      setUserInfo({ name: "juan", email: "j@gmail.com", phone: "555555" });
+      reset();
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } else {
+      alert("Error credenciales");
+    }
+  };
 
   return (
     <Page>
@@ -24,31 +42,33 @@ export const Login = () => {
       <form onSubmit={handleSubmit(onSubmitLogin)}>
         <FormControl>
           <FormControLabel>Correo electrónico</FormControLabel>
-          <FormControlInput 
+          <FormControlInput
             type="email"
-            {...register("email", {required: true, pattern: /\S+@\S+\.\S+/ })}
+            {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
           />
-          { errors.email?.type === "required" &&
-            (<span>Este campo es obligatorio</span>) 
-          }
-          { errors.email?.type === "pattern" &&
-            (<span>Ingrese un correo válido</span>) 
-          }
+          {errors.email?.type === "required" && (
+            <span>Este campo es obligatorio</span>
+          )}
+          {errors.email?.type === "pattern" && (
+            <span>Ingrese un correo válido</span>
+          )}
         </FormControl>
 
         <FormControl>
           <FormControLabel>Contraseña</FormControLabel>
-          <FormControlInput 
+          <FormControlInput
             type="password"
-            {...register("password", {required: true})}
+            {...register("password", { required: true })}
           />
-          { errors.password?.type === "required" &&
-            (<span>La contraseña es obligatoria</span>) 
-          }
+          {errors.password?.type === "required" && (
+            <span>La contraseña es obligatoria</span>
+          )}
         </FormControl>
 
         <FormControlAction>
-          <Button disabled={!isValid} type="submit">Ingresar</Button>
+          <Button disabled={!isValid} type="submit">
+            Ingresar
+          </Button>
         </FormControlAction>
       </form>
     </Page>
