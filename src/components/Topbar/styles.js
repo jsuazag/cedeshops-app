@@ -9,6 +9,7 @@ export const TopbarWrapper = styled.div`
   left: 0;
   background: ${Theme.primary};
   display: flex;
+  z-index: 999999;
 `;
 
 export const CartWrapper = styled.div`
