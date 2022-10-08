@@ -1,10 +1,15 @@
-import { TopbarWrapper, CartWrapper, LogoWrapper } from "./styles";
+import {
+  TopbarWrapper,
+  CartWrapper,
+  LogoWrapper,
+  CartQuantity,
+} from "./styles";
 import { IoCart } from "react-icons/io5";
 import { useCart } from "../../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export const Topbar = () => {
-
-  const {cart} = useCart();
+  const { cart } = useCart();
 
   return (
     <TopbarWrapper>
@@ -12,11 +17,17 @@ export const Topbar = () => {
         <img src="/logoapp.png" alt="logo" />
       </LogoWrapper>
       <CartWrapper>
-        <div>
+        <Link to={'/checkout'}>
           <IoCart />
-        </div>
-        <div>{cart.quantity}</div>
-      </CartWrapper>
+        </Link>
+        {
+          cart.quantity > 0 && (
+            <CartQuantity>
+              <p>{cart.quantity}</p>
+            </CartQuantity>
+          )
+        }
+        </CartWrapper>
     </TopbarWrapper>
   );
 };

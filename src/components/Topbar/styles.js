@@ -32,3 +32,25 @@ export const LogoWrapper = styled.div`
     width: 180px;
   }
 `;
+
+export const CartQuantity = styled.div`
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: ${Theme.secoundary};
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 7px;
+  right: 2px;
+  border: 1px solid ${Theme.secoundary};
+  p {
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 0.77em;
+    font-weight: 700;
+  }
+`;
