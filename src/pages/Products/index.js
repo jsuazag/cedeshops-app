@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Page } from "../../components/Page";
 import { Product } from "../../components/Product";
 import { Search } from "../../components/Search";
+import { useCart } from "../../contexts/CartContext";
 import { ProductGrid } from "./styles";
 
 const PRODUCTS = [
@@ -66,9 +67,10 @@ export const Products = () => {
 
   const { idShop } = useParams();
   const [searchProducts, setSearchProducts] = useState("");
+  const {addItemToCart} = useCart();
 
   const addToCartHandler = (idProduct) => {
-    alert(idProduct);
+    addItemToCart(idProduct);
   }
 
   const onSearchProducts = (data) => {
