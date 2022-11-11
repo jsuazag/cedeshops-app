@@ -9,6 +9,7 @@ import {
   FormControlAction,
   FormControlInput,
 } from "../../globalStyles";
+import { httpRequest } from "../../utils/HttpRequest";
 
 export const Login = () => {
   const {
@@ -21,7 +22,7 @@ export const Login = () => {
   const { setAuthenticate, setUserInfo } = useUser();
   const navigate = useNavigate();
 
-  const onSubmitLogin = (data) => {
+  /*const onSubmitLogin = (data) => {
     console.log("data", data);
     // TODO: call request login
     if (data.email === "j@gmail.com" && data.password === "123456") {
@@ -34,7 +35,24 @@ export const Login = () => {
     } else {
       alert("Error credenciales");
     }
-  };
+  };*/
+
+  const onSubmitLogin = async (data) => {
+    try {
+      const response = await httpRequest({
+        endpoint: "/users/login",
+        body: data
+      });
+      const {token} = response;
+      setAuthenticate(true);
+      reset();
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    } catch (error) {
+      console.log('error', error);
+    }
+  }
 
   return (
     <Page>
