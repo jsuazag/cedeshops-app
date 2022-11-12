@@ -10,6 +10,7 @@ import {
   FormControlInput,
 } from "../../globalStyles";
 import { httpRequest } from "../../utils/HttpRequest";
+import {Alert, ALERT_TYPE} from '../../components/Alert';
 
 export const Login = () => {
   const {
@@ -46,11 +47,23 @@ export const Login = () => {
       const {token} = response;
       setAuthenticate(true);
       reset();
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+      Alert({
+        title: "Bienvenido",
+        description: "Acceso validado",
+        type: ALERT_TYPE.SUCCESS,
+        callback: () => { 
+          setTimeout(() => {
+            navigate("/");
+          }, 1000);
+        }
+      });
     } catch (error) {
       console.log('error', error);
+      Alert({
+          title: "Error", 
+          description: "Credenciales invalidas", 
+          type: ALERT_TYPE.ERROR
+      });
     }
   }
 
