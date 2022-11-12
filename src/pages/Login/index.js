@@ -11,6 +11,7 @@ import {
 } from "../../globalStyles";
 import { httpRequest } from "../../utils/HttpRequest";
 import {Alert, ALERT_TYPE} from '../../components/Alert';
+import { setToken } from "../../utils/TokenLocalStorage";
 
 export const Login = () => {
   const {
@@ -44,7 +45,8 @@ export const Login = () => {
         endpoint: "/users/login",
         body: data
       });
-      const {token} = response;
+      const {token} = response.data;
+      setToken(token);
       setAuthenticate(true);
       reset();
       Alert({
