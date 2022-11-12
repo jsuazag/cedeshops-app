@@ -47,7 +47,7 @@ export const Login = () => {
       });
       const {token} = response.data;
       setToken(token);
-      setAuthenticate(true);
+      //setAuthenticate(true);
       reset();
       Alert({
         title: "Bienvenido",

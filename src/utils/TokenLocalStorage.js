@@ -5,9 +5,9 @@ export const setToken = (value) => {
 };
 
 export const getToken = () => {
-	localStorage.getItem(KEY);
-}
+  return localStorage.getItem(KEY);
+};
 
 export const removeToken = () => {
-	localStorage.removeItem(KEY);
-}
+  localStorage.removeItem(KEY);
+};
